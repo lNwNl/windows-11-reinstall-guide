@@ -52,7 +52,7 @@ SSH 私钥和项目凭据不要放到公开仓库中。
 安装 Ventoy 会修改目标磁盘，操作前注意不要选错盘。安装介质和重要数据的唯一备份不要放在同一块盘上。
 
 ### 跳过联网和微软账号
-在装Windows 11时，默认会要求登录Windows账号，但是可能由于微软的网络问题，或者说网卡驱动还没有安装而无法登录，可以选择跳过。
+在装Windows 11时，默认会要求登录Windows账号，但是可能由于微软的网络问题/网卡驱动还没有安装而无法登录，可以选择跳过。
 参考视频：[Windows 11 安装时跳过联网登录微软账号](https://www.bilibili.com/video/BV1YGj665EK7)
 
 按 `Shift + F10` （或者`Shift + Fn + F10` ）打开命令提示符，然后运行：
@@ -73,7 +73,7 @@ start ms-cxh:localonly
 软件来源按以下顺序选择：
 
 1. 微软商店（微软商店中的软件有一部分运行在沙盒中，卸载之后不容易有残留，而且更安全。还支持自动更新）
-2. winget（如果嫌复杂可以跳过这个。可视化界面：https://devolutions.net/unigetui）
+2. winget（如果嫌复杂可以跳过这个。可视化界面：https://github.com/Devolutions/UniGetUI
 3. 软件官网或官方 GitHub Releases。注意，必应搜索结果可能包含伪造的官网。建议日常搜索引擎用谷歌。
 4. 火绒应用商店等可信软件商店。
 
@@ -81,24 +81,31 @@ start ms-cxh:localonly
 
 ## 五、开发环境
 
-Windows 主要安装桌面软件，编译器、语言环境、包管理器、容器和服务放在 WSL 中。一般选择 Ubuntu，资料多，遇到问题也更容易解决。
+Windows 主要安装桌面软件，编译器、语言环境、包管理器、容器和服务放在 WSL 中。一般选择 Ubuntu，多数软件会专门在Ubuntu上测试，遇到问题的可能性小些。
 
 打开 PowerShell：
 ```powershell
 wsl --install --distribution Ubuntu
 ```
-主要使用 Linux 工具的项目放在 WSL 的 `~/projects`，不要放在 `/mnt/c/...`。因为放在Windows下，从WSL中访问，性能比较差。
+主要使用 Linux 工具的项目放在 WSL 的 `~/`（用户目录），不要放在 `/mnt/c/...`。因为从WSL中访问Windows文件的性能比较差。
 
 ## 六、软件清单
 
-### 文档与效率
+### 效率
 
+- FlClash
+- Everything
+- NanaZip
+- 火绒
+- VMware
 - Microsoft To Do
 - Typora
 - Office
 - 欧路词典
 - SumatraPDF
 - OpenLess（语音输入工具） / 豆包语音输入法（目前处于内测阶段，可以找我要Windows安装包）
+- OBS Studio
+- VLC
 
 ### 沟通与远程
 
@@ -113,40 +120,16 @@ wsl --install --distribution Ubuntu
 - 坚果云
 - Gopeed（一个下载工具，装了这个软件中的插件，可以通过网页来下载百度网盘、夸克网盘的一些东西，而不依赖于百度网盘、夸克网盘的客户端。它还支持接管日常的下载，下载速度会更快。还支持BT下载。）
 
-### 影音与录制
-
-- OBS Studio
-- VLC
-
-### Windows 工具
-
-- Everything
-- NanaZip
-- 火绒
-
 ### 开发与 AI
 
 - Visual Studio Code
 - ChatGPT（建议让其运行在WSL中，路径：设置-常规-集成终端 Shell、智能体环境）
 
-### 网络工具
-
-- FlClash
-
-FlClash 与 Clash Verge Rev 功能重叠，选择一个主力客户端即可，避免同时接管系统代理、TUN 和 DNS。
-
-### 虚拟化
-
-- VMware
-- Windows 11 虚拟机
-
 ### 系统增强
 
-- Windhawk
+- Windhawk 及推荐的插件
   - Alt+Tab Window Delayer
   - Remove Taskbar Window Suffixes
-  - Windows 11 Taskbar Styler
   - 任务栏 Dock 动画
   - Turn Off Change File Extension Warning
 
-Windhawk 模组最后安装，一次启用一个；出现任务栏、Explorer 或 Alt+Tab 异常时，先禁用最近安装的模组。
