@@ -41,7 +41,7 @@ SSH 私钥和项目凭据不要放到公开仓库中。
 
 ## 二、安装 Windows 11
 
-1. 从[微软官网](https://www.microsoft.com/software-download/windows11)下载 Windows 11 ISO。
+1. 从[微软官网](https://www.microsoft.com/software-download/windows11)下载 Windows 11 ISO。（现在推荐https://www.bilibili.com/video/BV14y4U6DEjc 26H2预览版镜像，相对稳定，功能和性能都比之前好）
 2. 从 [Ventoy 官网](https://www.ventoy.net/en/download.html)下载 Ventoy，并安装到移动硬盘或 U 盘。
 3. 把 Windows 11 ISO 放进 Ventoy 数据分区。
 4. 重启电脑，从启动菜单选择 Ventoy 所在设备。
